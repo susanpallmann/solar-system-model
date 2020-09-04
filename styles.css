@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #011627;
+}
+#solar-system {
+  max-width: 1000px;
+  margin: 100px auto 0 auto;
+}
+.planet {
+  border-radius: 100000px;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  margin: auto;
+}
+.animate {
+  -webkit-animation:spin 4s linear infinite;
+  -moz-animation:spin 4s linear infinite;
+  animation:spin 4s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+#sun {
+  background-color: #E9C46A;
+}
+#mercury {
+  background-color: #E76F51;
+}
+#venus {
+  background-color: #F4A261;
+}
+#earth {
+  background-color: #2A9D8F;
+}
+#mars {
+  background-color: #E76F51;
+}
+#jupiter {
+  background-color: #F4A261;
+}
+#saturn {
+  background-color: #E9C46A;
+}
+#uranus {
+  background-color: #2A9D8F;
+}
+#neptune {
+  background-color: #17BEBB;
+}
+#pluto {
+  background-color: #BBACC1;
+}
+.orbit {
+	border: 2px solid rgba(255, 255, 255, 0.5);
+	margin: auto;
+	border-radius: 100000px;
+	position: relative;
+	display: none;
+}
+#mercury-orbit {
+}
