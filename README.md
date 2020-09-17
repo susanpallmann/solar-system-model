@@ -17,7 +17,7 @@ So, in the interest of making something that still looks reasonable, accuracy is
 * The sun's size is not proportional.
 
 ### Imported Data
-Information for this project is from [NASA](https://nssdc.gsfc.nasa.gov/planetary/factsheet/)
+Information for this project is from [NASA](https://nssdc.gsfc.nasa.gov/planetary/factsheet/), and then adjusted as described below.
 
 #### Information
 ```javascript
@@ -163,3 +163,6 @@ var pluto = {
 	caption: 'Although Pluto is now considered a dwarf planet rather than a full planet, I included it to make my model feel more nostalgic. :)'
 }
 ```
+
+#### Scaling
+As mentioned, many variables of this model are not to scale with each other.
