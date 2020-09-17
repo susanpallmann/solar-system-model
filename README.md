@@ -1,5 +1,6 @@
 # Solar System Model
 Just for fun: creating a model of the solar system that semi-accurately represents relative speeds, orbits, rotations, etc.
+
 Also on [Codepen](https://codepen.io/susanpallmann/pen/eYZLBeN)
 
 ## Notes
