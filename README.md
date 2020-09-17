@@ -14,7 +14,7 @@ So, in the interest of making something that still looks reasonable, accuracy is
 * Planetary orbital speeds are proportional to each other.
 * Planetary sizes and distances from the sun are not proportional to each other.
 * Orbit speed is not proportional to distances or sizes.
-* The sun's size is not proportional.
+* The sun's size is not proportional to anything. It's too ridiculously big. ¯\_(ツ)_/¯
 
 ### Imported Data
 Information for this project is from [NASA](https://nssdc.gsfc.nasa.gov/planetary/factsheet/), and then adjusted as described below.
