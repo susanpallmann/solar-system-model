@@ -1,3 +1,5 @@
+/* Global variables containing preprogrammed data */
+
 // Mass is in units of 10^24kg
 // Diameter is in km
 // Gravity is in terms of Earth's (converted from m/s^2)
@@ -9,6 +11,7 @@
 // Information from:
 // https://nssdc.gsfc.nasa.gov/planetary/factsheet/
 // https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html
+
 var sun = {
 	name: 'sun',
 	mass: 1988500,
@@ -21,6 +24,7 @@ var sun = {
 	temperature: 5505,
 	caption: 'The Sun is a medium/small sized star at the center of our solar system.'
 }
+
 var mercury = {
 	name: 'mercury',
 	mass: 0.330,
@@ -33,6 +37,7 @@ var mercury = {
 	temperature: 167,
 	caption: 'Mercury is a small, hot planet that orbits the closest to the sun.'
 }
+
 var venus = {
 	name: 'venus',
 	mass: 4.87,
@@ -45,6 +50,7 @@ var venus = {
 	temperature: 464,
 	caption: 'Venus is a hot planet about the size and mass of Earth, sometimes called our sister planet.'
 }
+
 var earth = {
 	name: 'earth',
 	mass: 5.97,
@@ -57,6 +63,7 @@ var earth = {
 	temperature: 15,
 	caption: 'Earth is the planet we call home. It is uniquely suited to life, which is why you\'re here!'
 }
+
 var mars = {
 	name: 'mars',
 	mass: 0.642,
@@ -69,6 +76,7 @@ var mars = {
 	temperature: -65,
 	caption: 'Mars is a little smaller than Earth, but has the largest mountain in our solar system.'
 }
+
 var jupiter = {
 	name: 'jupiter',
 	mass: 1898,
@@ -81,6 +89,7 @@ var jupiter = {
 	temperature: -110,
 	caption: 'Jupiter is the largest planet in our solar system and has a large red spot that is actually a long, ongoing storm!'
 }
+
 var saturn = {
 	name: 'saturn',
 	mass: 568,
@@ -93,6 +102,7 @@ var saturn = {
 	temperature: -140,
 	caption: 'Saturn is best known for its prominent rings, although it is not actually the only planet with rings in our system.'
 }
+
 var uranus = {
 	name: 'uranus',
 	mass: 86.8,
@@ -105,6 +115,7 @@ var uranus = {
 	temperature: -195,
 	caption: 'Uranus is a bright green planet, so colored due to the absorption of red light by methane gas in the atmosphere.'
 }
+
 var neptune = {
 	name: 'neptune',
 	mass: 102,
@@ -117,6 +128,7 @@ var neptune = {
 	temperature: -200,
 	caption: 'Neptune is a very blue planet in the outer solar system. Although it is much larger than Earth, its gravity is remarkably similar to ours!'
 }
+
 var pluto = {
 	name: 'pluto',
 	mass: 0.0146,
@@ -129,10 +141,15 @@ var pluto = {
 	temperature: -225,
 	caption: 'Although Pluto is now considered a dwarf planet rather than a full planet, I included it to make my model feel more nostalgic. :)'
 }
+
+// Simple function to set a starting distance from the sun
 function storeSunOffset () {
 	const sunOffset = 120;
 	return sunOffset;
 }
+
+// Calls some starting functions for each planet
+// This function called on document ready
 function initializePlanets () {
 	$('.planet').each(function(i, obj) {
 		let planetName = $(this).attr('id');
@@ -181,12 +198,14 @@ function initializePlanets () {
 		}
 	});
 }
+
+// Function to scale and position planets
 function planetSetup(obj) {
 	const planet = obj.name;
 	const size = obj.diameter * 0.001;
 	const day = obj.dayLength;
 	const orbit = obj.orbitalPeriod;
-	const distance = obj.sunDistance * 0.0001 * 400;
+	const distance = obj.sunDistance * 100 * 0.003 + 50;
 	const sunOffset = storeSunOffset();
 	$('#' + planet).css({
 		'height' : size + 'px',
@@ -194,23 +213,96 @@ function planetSetup(obj) {
 		'top' : distance + sunOffset + 'px',
 	});
 }
+
+// Function to calculate orbital speed, starts animation
 function calculateOrbit(obj) {
 	const planet = obj.name;
+	const size = obj.diameter * 0.001;
 	const sunOffset = storeSunOffset();
+	const distance = obj.sunDistance * 100 * 0.003 + 50;
 	const orbit = obj.orbitalPeriod;
 	let pageDistance = $('#' + planet).offset().top;
 	pageDistance = pageDistance - sunOffset;
+	$('#' + planet + '-orbit').css({
+		'width' : distance * 2 + (size) + 2 + 'px',
+		'height' : distance * 2 + (size) + 2 + 'px',
+		'top' : -distance + sunOffset - (size / 2) - 1 + 'px'
+	});
 	$('#' + planet).css({
 		'transform-origin' : 'center ' + -pageDistance + 'px'
 	});
 	$('#' + planet).css({
-		'-webkit-animation' : 'spin ' + orbit*0.05 + 's linear infinite',
-		'-moz-animation' : 'spin ' + orbit*0.05 + 's linear infinite',
-		'animation' : 'spin ' + orbit*0.05 + 's linear infinite'
+		'-webkit-animation' : 'spin ' + orbit * 0.05 + 's linear infinite',
+		'-moz-animation' : 'spin ' + orbit * 0.05 + 's linear infinite',
+		'animation' : 'spin ' + orbit * 0.05 + 's linear infinite'
 	});
 }
+
+/* Gets info for passed in object and displays applicable 
+  information in side panel. */
+function loadInfo(obj) {
+  $('#name').text(obj.name);
+  $('#diameter').text(obj.diameter);
+  $('#gravity').text(obj.gravity);
+  if (obj.dayLength !== null) {
+    $('#day-container').css('display', 'block');
+    $('#year-container').css('display', 'block');
+    $('#day-length').text(obj.dayLength);
+    $('#year-length').text(obj.orbitalPeriod);
+  } else {
+    $('#day-container').css('display', 'none');
+    $('#year-container').css('display', 'none');
+  }
+  $('#temp').text(obj.temperature);
+  $('#caption').text(obj.caption);
+}
+
+/* On document load, calls initialization, readies 
+  click listeners */
 $(document).ready(function(){
 	initializePlanets();
-	
-	console.log(neptune.gravity);
+  
+    // On click, sends information to be loaded in panel
+  /* Switch case probably isn't the best way to do this, 
+     but I don't know how to call a variable using another 
+     variable so ¯\_(ツ)_/¯ */
+  $('.planet').click(function() {
+    $('.selected').removeClass('selected');
+		$(this).addClass('selected');
+    let planetName = $(this).attr('id');
+    let pName = planetName.name;
+    console.log(planetName);
+    switch(planetName) {
+      case "sun":
+        loadInfo(sun);
+      break;
+      case "mercury":
+        loadInfo(mercury);
+      break;
+      case "venus":
+        loadInfo(venus);
+      break;
+      case "earth":
+        loadInfo(earth);
+      break;
+      case "mars":
+        loadInfo(mars);
+      break;
+      case "jupiter":
+        loadInfo(jupiter);
+      break;
+      case "saturn":
+        loadInfo(saturn);
+      break;
+      case "uranus":
+        loadInfo(uranus);
+      break;
+      case "neptune":
+        loadInfo(neptune);
+      break;
+      case "pluto":
+        loadInfo(pluto);
+      break;
+    }
+  });
 });
