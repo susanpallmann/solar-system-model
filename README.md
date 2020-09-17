@@ -164,10 +164,10 @@ var pluto = {
 }
 ```
 
-#### Scaling
+### Scaling
 As mentioned, many variables of this model are not to scale with each other.
 
-##### Planet Size
+#### Planet Size
 ```javascript
 const size = obj.diameter * 0.001;
 $('#' + planet).css({
@@ -177,7 +177,7 @@ $('#' + planet).css({
 ```
 To set the size, the diameter stored (in km), is reduced to one thousandth, and then set to pixels.
 
-##### Distance from Sun
+#### Distance from Sun
 ```javascript
 const distance = obj.sunDistance * 0.3 + 50;
 const sunOffset = storeSunOffset();
@@ -186,3 +186,13 @@ $('#' + planet).css({
 });
 ```
 The distance from the sun is first offset by a sunOffset amount (120px in this case). This is because the sun in my model is 40px in diameter, and is placed 100px from the top of the page. In order to have the planets orbit around the center of the sun, this distance has to be accounted for in the planet's "top" style. From there, distance is reduced to 30% (keeping in mind that this is 30% of 10^6 km). An extra 50px is added just to allow stylistic distance from the Sun. This particular number is arbitrary and not accurate to the model.
+
+#### Orbital Speed
+```javascript
+$('#' + planet).css({
+	'-webkit-animation' : 'spin ' + orbit * 0.05 + 's linear infinite',
+	'-moz-animation' : 'spin ' + orbit * 0.05 + 's linear infinite',
+	'animation' : 'spin ' + orbit * 0.05 + 's linear infinite'
+});
+```
+A spin animation is initialized, using the time it takes for each planet to orbit the sun multiplied by 0.05, and translated from Earth days to seconds.
