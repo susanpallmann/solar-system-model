@@ -3,6 +3,16 @@ Just for fun: creating a model of the solar system that semi-accurately represen
 
 Also on [Codepen](https://codepen.io/susanpallmann/pen/eYZLBeN)
 
+## Contents
+* [Notes](#notes)
+	* [Relative Accuracy](#relative-accuracy)
+	* [Imported Data](#imported-data)
+		* [Information](#information)
+	* [Scaling](#scaling)
+		* [Planet Size](#planet-size)
+		* [Distance from Sun](#distance-from-sun)
+		* [Orbital Speed](#orbital-speed)
+
 ## Notes
 ### Relative Accuracy
 Although the original goal was to have all attributes (size, speed, distance from sun) be to scale, it became evident very quickly that this would not be practical on a website. The sun, when to scale with the other planets, took up nearly the entire page. If I made the overall scale smaller to compensate, then planets like Mercury were barely visible. Having orbital distance from the Sun relative to scale of planets made the page so long it was difficult to *find* a planet. 
