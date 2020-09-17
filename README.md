@@ -1,5 +1,6 @@
-# solar-system-model
+# Solar System Model
 Just for fun: creating a model of the solar system that semi-accurately represents relative speeds, orbits, rotations, etc.
+Also on [Codepen](https://codepen.io/susanpallmann/pen/eYZLBeN)
 
 ## Notes
 ### Relative Accuracy
@@ -11,3 +12,4 @@ Although the original goal was to have all attributes (size, speed, distance fro
 * Planetary sizes and distances from the sun are not proportional to each other.
 * Orbit speed is not proportional to distances or sizes.
 * The sun's size is not proportional.
+
