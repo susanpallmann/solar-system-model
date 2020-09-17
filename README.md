@@ -17,7 +17,7 @@ So, in the interest of making something that still looks reasonable, accuracy is
 * The sun's size is not proportional.
 
 ### Imported Data
-Information for this project is from [Nasa](https://nssdc.gsfc.nasa.gov/planetary/factsheet/)
+Information for this project is from [NASA](https://nssdc.gsfc.nasa.gov/planetary/factsheet/)
 
 #### Information
 ```javascript
