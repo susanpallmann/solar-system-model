@@ -8,50 +8,72 @@
   </head>
   <body>
     <header>
-	</header>
-	<main>
-	  <div id="solar-system">
-	    <div id="sun" class="planet">
-		</div>
-		<div id="mercury" class="planet">
-		</div>
-		<div id="venus" class="planet">
-		</div>
-		<div id="earth" class="planet">
-		</div>
-		<div id="mars" class="planet">
-		</div>
-		<div id="jupiter" class="planet">
-		</div>
-		<div id="saturn" class="planet">
-		</div>
-		<div id="uranus" class="planet">
-		</div>
-		<div id="neptune" class="planet">
-		</div>
-		<div id="pluto" class="planet">
-		</div>
-		<div id="mercury-orbit" class="orbit">
-		</div>
-		<div id="venus-orbit" class="orbit">
-		</div>
-		<div id="earth-orbit" class="orbit">
-		</div>
-		<div id="mars-orbit" class="orbit">
-		</div>
-		<div id="jupiter-orbit" class="orbit">
-		</div>
-		<div id="saturn-orbit" class="orbit">
-		</div>
-		<div id="uranus-orbit" class="orbit">
-		</div>
-		<div id="neptune-orbit" class="orbit">
-		</div>
-		<div id="pluto-orbit" class="orbit">
-		</div>
-	  </div>
-	</main>
-	<footer>
-	</footer>
+		</header>
+		<main>
+			<div id="solar-system">
+				<div id="sun" class="planet">
+				</div>
+				<div id="mercury" class="planet">
+				</div>
+				<div id="venus" class="planet">
+				</div>
+				<div id="earth" class="planet">
+				</div>
+				<div id="mars" class="planet">
+				</div>
+				<div id="jupiter" class="planet">
+				</div>
+				<div id="saturn" class="planet">
+				</div>
+				<div id="uranus" class="planet">
+				</div>
+				<div id="neptune" class="planet">
+				</div>
+				<div id="pluto" class="planet">
+				</div>
+				<div id="mercury-orbit" class="orbit">
+				</div>
+				<div id="venus-orbit" class="orbit">
+				</div>
+				<div id="earth-orbit" class="orbit">
+				</div>
+				<div id="mars-orbit" class="orbit">
+				</div>
+				<div id="jupiter-orbit" class="orbit">
+				</div>
+				<div id="saturn-orbit" class="orbit">
+				</div>
+				<div id="uranus-orbit" class="orbit">
+				</div>
+				<div id="neptune-orbit" class="orbit">
+				</div>
+				<div id="pluto-orbit" class="orbit">
+				</div>
+			</div>
+			<div id="info-panel">
+				<div class="container">
+					<div class="row">
+						<div class="column span12 md">
+							<h1>Solar System Model</h1>
+							<p>This is a model solar system based on real data from <a href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/" rel="noreferrer" target="_blank">NASA</a>. Although much of this model is designed to be proportional, some liberties had to be taken in order for all objects to be visible! As such, while the planetary distances from the sun are proportional to each other, they are not proportional to the sizes of the planets (also proportional to each other). Additionally, the sun is made smaller as initially it took up the entire page above the fold!</p>
+							<p>Select a planet to learn more about it.</p>
+							<br>
+							<br>
+							<div id="planet-info">
+								<h3 id="name">Example</h3>
+								<p>Diameter: <span id="diameter"></span> km</p>
+								<p>Gravity: <span id="gravity"></span> times that of Earth.</p>
+								<p id="day-container">Day: <span id="day-length"></span> Earth Days</p>
+								<p id="year-container">Year: <span id="year-length"></span> Earth Days</p>
+								<p>Temperature: <span id="temp"></span> degrees Celsius</p>
+								<p id="caption"></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer>
+		</footer>
   </body>
 </html>
