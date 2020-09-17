@@ -7,5 +7,7 @@ Although the original goal was to have all attributes (size, speed, distance fro
 
 * Planetary distances from the sun are proportional to each other.
 * Planetary sizes are proportional to each other.
-* Planetary distances from the sun and sizes are not proportional to each other.
+* Planetary orbital speeds are proportional to each other.
+* Planetary sizes and distances from the sun are not proportional to each other.
+* Orbit speed is not proportional to distances or sizes.
 * The sun's size is not proportional.
