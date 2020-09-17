@@ -103,7 +103,6 @@ a:hover {
 }
 #uranus {
   background-color: #2A9D8F;
-  background-image: url('images/uranus.svg');
   box-shadow: inset 0px -15px 10px rgba(1, 22, 39, 0.7);
 }
 #neptune {
